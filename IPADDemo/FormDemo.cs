@@ -1,5 +1,6 @@
 ﻿using IPADDemo.Model;
 using IPADDemo.WeChat;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -127,6 +128,34 @@ namespace IPADDemo
             }
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            weChatThread.Wx_CreateChatRoom(txt_GroupUsers.Text);
+        }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            weChatThread.Wx_AddChatRoomMember(txt_groupwxid.Text,txt_groupuserwxid.Text);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            weChatThread.Wx_DeleteChatRoomMember(txt_groupwxid.Text, txt_groupuserwxid.Text);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            weChatThread.Wx_SetChatroomName(txt_groupwxid.Text, txt_groupname.Text);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            weChatThread.Wx_SetChatroomAnnouncement(txt_groupwxid.Text, txt_groupgg.Text);
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            weChatThread.Wx_QuitChatRoom(txt_groupwxid.Text);
+        }
     }
 }

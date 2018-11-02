@@ -145,3 +145,7 @@ C:\xm\git\Xzy.Mac.WeChat\Xzy.Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.csproj.CopyC
 C:\xm\git\Xzy.Mac.WeChat\Xzy.Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.exe
 C:\xm\git\Xzy.Mac.WeChat\Xzy.Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.pdb
 C:\xm\git\Xzy.Mac.WeChat\Xzy.Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.csprojAssemblyReference.cache
+C:\xm\git\Xzy.Mac.WeChat\Xzy.Mac.WeChat\IPADDemo\bin\Debug\Xzy.WebWx.Model.dll
+C:\xm\git\Xzy.Mac.WeChat\Xzy.Mac.WeChat\IPADDemo\bin\Debug\FSLib.Network.dll
+C:\xm\git\Xzy.Mac.WeChat\Xzy.Mac.WeChat\IPADDemo\bin\Debug\FSLib.Extension.dll
+C:\xm\git\Xzy.Mac.WeChat\Xzy.Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.exe.config

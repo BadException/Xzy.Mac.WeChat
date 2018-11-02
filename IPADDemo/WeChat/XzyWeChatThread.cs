@@ -471,9 +471,6 @@ namespace IPADDemo.WeChat
                         XzyWxApis.WXHeartBeat(pointerWxUser, (int)pushStr1);
                         datas = MarshalNativeToManaged((IntPtr)pushStr);
 
-                        TestAPI test = new TestAPI();
-                        test.Test(pointerWxUser);
-
                         sstr = datas.ToString();
                         Wx_ReleaseEX(ref pushStr);
 
@@ -1144,12 +1141,12 @@ namespace IPADDemo.WeChat
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public unsafe string Wx_CreateChatRoom(string user)
+        public unsafe string Wx_CreateChatRoom(string users)
         {
             var result = "";
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
             {
-                XzyWxApis.WXCreateChatRoom(pointerWxUser, user, (int)msgptr1);
+                XzyWxApis.WXCreateChatRoom(pointerWxUser, users, (int)msgptr1);
                 var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                 result = datas.ToString();
                 Wx_ReleaseEX(ref msgPtr);
@@ -1234,6 +1231,25 @@ namespace IPADDemo.WeChat
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
             {
                 XzyWxApis.WXAddChatRoomMember(pointerWxUser, groupid, user, (int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 删除群成员
+        /// </summary>
+        /// <param name="groupid"></param>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public unsafe string Wx_DeleteChatRoomMember(string groupid, string user)
+        {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXDeleteChatRoomMember(pointerWxUser, groupid, user, (int)msgptr1);
                 var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                 result = datas.ToString();
                 Wx_ReleaseEX(ref msgPtr);

@@ -95,6 +95,9 @@
     <Reference Include="Xzy.WebWx.Core">
       <HintPath>..\..\WebWx.Core\dll\Xzy.WebWx.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Xzy.WebWx.Model">
+      <HintPath>..\..\..\WebWx.Core\dll\Xzy.WebWx.Model.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppData\App.cs" />
