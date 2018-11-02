@@ -3,4 +3,4 @@
  注册后将授权配置到app.config即可使用<br/>
  支持功能如下:<br/>
 
-![](https://github.com/xuzeyu91/Xzy.Mac.WeChat/blob/master/%E5%BE%AE%E4%BF%A1API%E6%96%87%E6%A1%A3.txt)
+![](https://github.com/xuzeyu91/Xzy.Mac.WeChat/blob/master/API.txt)
