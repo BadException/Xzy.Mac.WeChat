@@ -4,3 +4,5 @@
  支持功能如下:<br/>
 
 <a href="https://github.com/xuzeyu91/Xzy.Mac.WeChat/blob/master/API.txt" title="支持功能API文档">支持功能API文档</a><br/>
+
+![](https://github.com/xuzeyu91/Xzy.Mac.WeChat/blob/master/demo.gif) <br/>
