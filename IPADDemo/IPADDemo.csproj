@@ -128,6 +128,7 @@
     <Compile Include="Model\SnsUpload.cs" />
     <Compile Include="Model\TcpMsg.cs" />
     <Compile Include="Model\UserData.cs" />
+    <Compile Include="Model\WxDat.cs" />
     <Compile Include="Model\WxDelegate.cs" />
     <Compile Include="Model\WxGroup.cs" />
     <Compile Include="Model\WxMember.cs" />

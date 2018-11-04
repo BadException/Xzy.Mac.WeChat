@@ -498,17 +498,6 @@ namespace IPADDemo.WeChat
         {
             fixed (int* WxUser1 = &pointerWxUser, pushStr1 = &pushStr)
             {
-
-                List<byte> blist = new List<byte>();
-                for (int i = 0; i < str16.Length / 2; i++)
-                {
-                    var s = str16.Substring(i * 2, 2);
-
-                    var a = Convert.ToInt32(s, 16);
-                    blist.Add((byte)a);
-                }
-                byte[] byt = blist.ToArray();
-
                 //var ret = XzyAuth.Init();
                 //if (ret == 1)
                 //{
@@ -526,10 +515,8 @@ namespace IPADDemo.WeChat
                 //62数据是扫码登录成功后，再获取，并保存下来，而不是其它方式登录后再保存。并且还要使用方法WXGetLoginToken保存下token
                 #region 使用62数据自动登录，在扫码登录后，会得到62数据及token，传入到这里即可实现自动登录
                 //加载62数据
-                //var data = "YnBsaXN0MDDUAQIDBAUGCQpYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKIHCFUkbnVsbF8QIGM1N2Y3NTkzMmI3MDhjM2RjYTY1YTY2MjdmZjM4NmE2XxAPTlNLZXllZEFyY2hpdmVy0QsMVHJvb3SAAQgRGiMtMjc6QGN1eH0AAAAAAAABAQAAAAAAAAANAAAAAAAAAAAAAAAAAAAAfw==";
-                //byte[] data62Bytes = Convert.FromBase64String(data);
-                //XzyWxApis.WXLoadWxDat(pointerWxUser, data62Bytes, data62Bytes.Length, (int)pushStr1);
-                XzyWxApis.WXLoadWxDat(pointerWxUser, byt, byt.Length, (int)pushStr1);
+                byte[] data62Bytes = Convert.FromBase64String(str16);
+                XzyWxApis.WXLoadWxDat(pointerWxUser, data62Bytes, data62Bytes.Length, (int)pushStr1);
                 var datas1 = MarshalNativeToManaged((IntPtr)pushStr);
                 var sstr1 = datas1.ToString();
                 if (string.IsNullOrEmpty(sstr1))

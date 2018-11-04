@@ -32,7 +32,7 @@ namespace IPADDemo
 
         private void FormDemo_Load(object sender, EventArgs e)
         {
-            weChatThread = new XzyWeChatThread();
+         
         }
 
         void calback_qrcode(string qrcode)
@@ -156,6 +156,23 @@ namespace IPADDemo
         private void button11_Click(object sender, EventArgs e)
         {
             weChatThread.Wx_QuitChatRoom(txt_groupwxid.Text);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            string str= weChatThread.Wx_GenerateWxDat();
+            WxDat wxDat = JsonConvert.DeserializeObject<WxDat>(str);
+            txt_login62.Text = wxDat.data;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            weChatThread = new XzyWeChatThread();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            weChatThread = new XzyWeChatThread(txt_login62.Text,txt_loginName.Text,txt_loginPassword.Text);
         }
     }
 }
