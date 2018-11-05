@@ -511,7 +511,7 @@
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(124, 38);
             this.button13.TabIndex = 9;
-            this.button13.Text = "62登陆";
+            this.button13.Text = "token登陆";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
@@ -521,7 +521,7 @@
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(124, 39);
             this.button12.TabIndex = 8;
-            this.button12.Text = "获取62数据";
+            this.button12.Text = "获取token数据";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
