@@ -174,5 +174,17 @@ namespace IPADDemo
         {
             weChatThread = new XzyWeChatThread(txt_loginToken.Text,txt_loginName.Text,txt_loginPassword.Text);
         }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+           txt_positionReturn.Text= weChatThread.Wx_GetPeopleNearby(float.Parse(txt_Lat.Text), float.Parse(txt_Lng.Text));
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            string [] types= cb_addtype.Text.Split('-');
+            int type = int.Parse(types[0]);
+            string result = weChatThread.Wx_AddUser(txt_v1.Text, txt_v2.Text, type, txt_hellotext.Text);
+        }
     }
 }

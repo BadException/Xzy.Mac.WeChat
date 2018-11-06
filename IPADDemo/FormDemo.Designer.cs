@@ -79,7 +79,23 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txt_loginName = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cb_addtype = new System.Windows.Forms.ComboBox();
+            this.txt_hellotext = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txt_v2 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txt_v1 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txt_positionReturn = new System.Windows.Forms.TextBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.txt_Lng = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txt_Lat = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.button14 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -87,6 +103,7 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -121,6 +138,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(223, 13);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -589,6 +607,164 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "账号：";
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.button16);
+            this.tabPage6.Controls.Add(this.label21);
+            this.tabPage6.Controls.Add(this.cb_addtype);
+            this.tabPage6.Controls.Add(this.txt_hellotext);
+            this.tabPage6.Controls.Add(this.label20);
+            this.tabPage6.Controls.Add(this.txt_v2);
+            this.tabPage6.Controls.Add(this.label19);
+            this.tabPage6.Controls.Add(this.txt_v1);
+            this.tabPage6.Controls.Add(this.label18);
+            this.tabPage6.Controls.Add(this.txt_positionReturn);
+            this.tabPage6.Controls.Add(this.button15);
+            this.tabPage6.Controls.Add(this.txt_Lng);
+            this.tabPage6.Controls.Add(this.label17);
+            this.tabPage6.Controls.Add(this.txt_Lat);
+            this.tabPage6.Controls.Add(this.label16);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(765, 396);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "附近的人";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(353, 253);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(82, 15);
+            this.label21.TabIndex = 13;
+            this.label21.Text = "添加方式：";
+            // 
+            // cb_addtype
+            // 
+            this.cb_addtype.FormattingEnabled = true;
+            this.cb_addtype.Items.AddRange(new object[] {
+            "1-通过QQ好友添加--可以",
+            "2-通过搜索邮箱--可加但无提示",
+            "3-通过微信号搜索--可以",
+            "5-通过朋友验证消息-可加但无提示",
+            "7-通过朋友验证消息(可回复)-可加但无提示",
+            "12-来自QQ好友--可以",
+            "13-通过手机通讯录添加--可以",
+            "14-通过群来源--no",
+            "15-通过搜索手机号--可以",
+            "16-通过朋友验证消息-可加但无提示",
+            "17-通过名片分享--no",
+            "18-通过附近的人--可以(貌似只需要v1就够了)",
+            "22-通过摇一摇打招呼方式--可以",
+            "25-通过漂流瓶---no",
+            "30-通过二维码方式--可以"});
+            this.cb_addtype.Location = new System.Drawing.Point(441, 252);
+            this.cb_addtype.Name = "cb_addtype";
+            this.cb_addtype.Size = new System.Drawing.Size(274, 23);
+            this.cb_addtype.TabIndex = 12;
+            // 
+            // txt_hellotext
+            // 
+            this.txt_hellotext.Location = new System.Drawing.Point(92, 250);
+            this.txt_hellotext.Name = "txt_hellotext";
+            this.txt_hellotext.Size = new System.Drawing.Size(219, 25);
+            this.txt_hellotext.TabIndex = 11;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(33, 253);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(67, 15);
+            this.label20.TabIndex = 10;
+            this.label20.Text = "打招呼：";
+            // 
+            // txt_v2
+            // 
+            this.txt_v2.Location = new System.Drawing.Point(92, 210);
+            this.txt_v2.Name = "txt_v2";
+            this.txt_v2.Size = new System.Drawing.Size(653, 25);
+            this.txt_v2.TabIndex = 9;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(33, 213);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(38, 15);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "v2：";
+            // 
+            // txt_v1
+            // 
+            this.txt_v1.Location = new System.Drawing.Point(92, 175);
+            this.txt_v1.Name = "txt_v1";
+            this.txt_v1.Size = new System.Drawing.Size(653, 25);
+            this.txt_v1.TabIndex = 7;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(33, 178);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(38, 15);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "v1：";
+            // 
+            // txt_positionReturn
+            // 
+            this.txt_positionReturn.Location = new System.Drawing.Point(33, 60);
+            this.txt_positionReturn.Multiline = true;
+            this.txt_positionReturn.Name = "txt_positionReturn";
+            this.txt_positionReturn.Size = new System.Drawing.Size(712, 100);
+            this.txt_positionReturn.TabIndex = 5;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(441, 18);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(142, 26);
+            this.button15.TabIndex = 4;
+            this.button15.Text = "查看附近的人";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // txt_Lng
+            // 
+            this.txt_Lng.Location = new System.Drawing.Point(283, 18);
+            this.txt_Lng.Name = "txt_Lng";
+            this.txt_Lng.Size = new System.Drawing.Size(100, 25);
+            this.txt_Lng.TabIndex = 3;
+            this.txt_Lng.Text = "118.538361";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(227, 19);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(39, 15);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Lng:";
+            // 
+            // txt_Lat
+            // 
+            this.txt_Lat.Location = new System.Drawing.Point(92, 19);
+            this.txt_Lat.Name = "txt_Lat";
+            this.txt_Lat.Size = new System.Drawing.Size(100, 25);
+            this.txt_Lat.TabIndex = 1;
+            this.txt_Lat.Text = "24.911349";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(30, 19);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(39, 15);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Lat:";
+            // 
             // button14
             // 
             this.button14.Location = new System.Drawing.Point(12, 300);
@@ -598,6 +774,16 @@
             this.button14.Text = "扫码登录";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(33, 295);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(75, 23);
+            this.button16.TabIndex = 14;
+            this.button16.Text = "添加";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // FormDemo
             // 
@@ -627,6 +813,8 @@
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -686,5 +874,21 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txt_Lat;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.TextBox txt_Lng;
+        private System.Windows.Forms.TextBox txt_positionReturn;
+        private System.Windows.Forms.TextBox txt_v2;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txt_v1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txt_hellotext;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox cb_addtype;
+        private System.Windows.Forms.Button button16;
     }
 }

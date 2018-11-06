@@ -508,7 +508,7 @@ namespace IPADDemo.WeChat
 
                 var key = string.Format(@"<softtype><k3>11.0.1</k3><k9>iPad</k9><k10>2</k10><k19>58BF17B5-2D8E-4BFB-A97E-38F1226F13F8</k19><k20>{0}</k20><k21>neihe_5GHz</k21><k22>(null)</k22><k24>{1}</k24><k33>\345\276\256\344\277\241</k33><k47>1</k47><k50>1</k50><k51>com.tencent.xin</k51><k54>iPad4,4</k54></softtype>", UUID, Mac);
 
-                XzyWxApis.WXInitialize((int)WxUser1, "sdsaIPAD", key, UUID);
+                XzyWxApis.WXInitialize((int)WxUser1, "xzyIPAD", key, UUID);
 
                 XzyWxApis.WXSetRecvMsgCallBack(pointerWxUser, msgCallBack);
 
@@ -1340,13 +1340,15 @@ namespace IPADDemo.WeChat
         {
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
             {
-                XzyWxApis.WXSendMoments(pointerWxUser, Encoding.Default.GetString(Encoding.UTF8.GetBytes(content.ToString())), (int)msgptr1);
+                XzyWxApis.WXSendMoments(pointerWxUser, Encoding.Default.GetString(Encoding.UTF8.GetBytes(content)), (int)msgptr1);
                 var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                 var str = datas.ToString();
                 Wx_ReleaseEX(ref msgPtr);
 
             }
         }
+
+
 
         /// <summary>
         /// 朋友圈图片上传
@@ -1476,6 +1478,32 @@ namespace IPADDemo.WeChat
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
             {
                 XzyWxApis.WXGenerateWxDat(pointerWxUser, (int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+        public unsafe string Wx_GetPeopleNearby(float lat,float lng)
+        {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXGetPeopleNearby(pointerWxUser, lat,lng,(int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+        public unsafe string Wx_AddUser(string  v1, string v2,int type,string context)
+        {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXAddUser(pointerWxUser, v1, v2, type,context, (int)msgptr1);
                 var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                 result = datas.ToString();
                 Wx_ReleaseEX(ref msgPtr);
