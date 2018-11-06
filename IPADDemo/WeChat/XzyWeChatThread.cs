@@ -1338,17 +1338,14 @@ namespace IPADDemo.WeChat
 
         public unsafe void Wx_SendMoment(string content)
         {
-            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            fixed (int* WxUser1 = &pointerWxUser)
             {
-                XzyWxApis.WXSendMoments(pointerWxUser, Encoding.Default.GetString(Encoding.UTF8.GetBytes(content)), (int)msgptr1);
-                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
-                var str = datas.ToString();
-                Wx_ReleaseEX(ref msgPtr);
-
+                var a=ESendSNS(pointerWxUser, content);
             }
         }
 
-
+        [DllImport("EUtils.dll")]
+        public static extern string ESendSNS(int wxuser,string str);
 
         /// <summary>
         /// 朋友圈图片上传

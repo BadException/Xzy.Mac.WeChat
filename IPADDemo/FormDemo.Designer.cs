@@ -80,6 +80,7 @@
             this.txt_loginName = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.button16 = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.cb_addtype = new System.Windows.Forms.ComboBox();
             this.txt_hellotext = new System.Windows.Forms.TextBox();
@@ -95,7 +96,6 @@
             this.txt_Lat = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.button14 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -274,6 +274,7 @@
             this.txt_snsText.Name = "txt_snsText";
             this.txt_snsText.Size = new System.Drawing.Size(160, 25);
             this.txt_snsText.TabIndex = 1;
+            this.txt_snsText.Text = "发送一次朋友圈子，你们平时看不到我的芳容骚貌";
             // 
             // label4
             // 
@@ -632,6 +633,16 @@
             this.tabPage6.Text = "附近的人";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(33, 295);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(75, 23);
+            this.button16.TabIndex = 14;
+            this.button16.Text = "添加";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -774,16 +785,6 @@
             this.button14.Text = "扫码登录";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(33, 295);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 23);
-            this.button16.TabIndex = 14;
-            this.button16.Text = "添加";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // FormDemo
             // 

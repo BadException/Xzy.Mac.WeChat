@@ -87,6 +87,8 @@ namespace IPADDemo
             weChatThread.Wx_SendMoment(txt_snsText.Text);
         }
 
+
+
         private void button4_Click(object sender, EventArgs e)
         {
             List<string> imgPath = new List<string>();
