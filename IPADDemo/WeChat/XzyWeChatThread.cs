@@ -1312,7 +1312,7 @@ namespace IPADDemo.WeChat
         /// <param name="content"></param>
         public unsafe void Wx_SendMoment(string content, List<string> imagelist)
         {
-            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            fixed (int* WxUser1 = &pointerWxUser)
             {
                 if (!imagelist.IsNull())
                 {
@@ -1327,11 +1327,8 @@ namespace IPADDemo.WeChat
                         SnsUpload upload = JsonConvert.DeserializeObject<SnsUpload>(strUploadResult);
                         imagestr += String.Format(App.PYQContentImage, upload.big_url, upload.small_url, upload.size, 100, 100);
                     }
-                    var result = String.Format(App.PYQContent, wxUser.wxid, Encoding.Default.GetString(Encoding.UTF8.GetBytes(content.ToString())), imagestr);
-                    XzyWxApis.WXSendMoments(pointerWxUser, result, (int)msgptr1);
-                    var datas = MarshalNativeToManaged((IntPtr)msgPtr);
-                    var str = datas.ToString();
-                    Wx_ReleaseEX(ref msgPtr);
+                    var result = String.Format(App.PYQContent, wxUser.wxid, imagestr);
+                    var a = ESendSNSImage(pointerWxUser, result, content);
                 }
             }
         }
@@ -1346,6 +1343,9 @@ namespace IPADDemo.WeChat
 
         [DllImport("EUtils.dll")]
         public static extern string ESendSNS(int wxuser,string str);
+
+        [DllImport("EUtils.dll")]
+        public static extern string ESendSNSImage(int wxuser, string xml,string context);
 
         /// <summary>
         /// 朋友圈图片上传

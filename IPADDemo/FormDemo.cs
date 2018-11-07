@@ -82,6 +82,12 @@ namespace IPADDemo
             }
         }
 
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            string str = weChatThread.Wx_SendVoice(txt_msgWxid.Text, "测试音频1.silk", 1);
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             weChatThread.Wx_SendMoment(txt_snsText.Text);
