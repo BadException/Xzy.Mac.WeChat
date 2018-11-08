@@ -1537,9 +1537,18 @@ namespace IPADDemo.WeChat
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
-        public unsafe string Wx_LoginRequest(string token)
+        public unsafe string Wx_LoginRequest(string token, string str62)
         {
             var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                byte[] data62Bytes = Convert.FromBase64String(str62);
+                XzyWxApis.WXLoadWxDat(pointerWxUser, data62Bytes, data62Bytes.Length, (int)msgptr1);
+                var data1 = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = data1.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+
+            }
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
             {
                 XzyWxApis.WXLoginRequest(pointerWxUser, token, (int)msgptr1);

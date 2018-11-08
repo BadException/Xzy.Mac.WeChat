@@ -184,7 +184,7 @@ namespace IPADDemo
 
         private void button19_Click(object sender, EventArgs e)
         {
-            weChatThread.Wx_LoginRequest(txt_loginToken.Text);
+            string str=weChatThread.Wx_LoginRequest(txt_loginToken.Text,txt_login62.Text);
         }
 
         private void button20_Click(object sender, EventArgs e)
