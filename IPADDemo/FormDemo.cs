@@ -170,7 +170,25 @@ namespace IPADDemo
         {
             string str= weChatThread.Wx_GenerateWxDat();
             WxDat wxDat = JsonConvert.DeserializeObject<WxDat>(str);
-            txt_loginToken.Text = wxDat.data;
+            txt_login62.Text = wxDat.data;
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            string str = weChatThread.Wx_GetLoginToken();
+            WxToken wxToken = JsonConvert.DeserializeObject<WxToken>(str);
+            txt_loginToken.Text= wxToken.token;
+        }
+
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            weChatThread.Wx_LoginRequest(txt_loginToken.Text);
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            weChatThread.Wx_AutoLogin(txt_loginToken.Text);
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -180,7 +198,7 @@ namespace IPADDemo
 
         private void button13_Click(object sender, EventArgs e)
         {
-            weChatThread = new XzyWeChatThread(txt_loginToken.Text,txt_loginName.Text,txt_loginPassword.Text);
+            weChatThread = new XzyWeChatThread(txt_login62.Text,txt_loginName.Text,txt_loginPassword.Text);
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -194,5 +212,7 @@ namespace IPADDemo
             int type = int.Parse(types[0]);
             string result = weChatThread.Wx_AddUser(txt_v1.Text, txt_v2.Text, type, txt_hellotext.Text);
         }
+
+     
     }
 }

@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button17 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txt_msgText = new System.Windows.Forms.TextBox();
@@ -96,7 +97,10 @@
             this.txt_Lat = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.button14 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -140,6 +144,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Location = new System.Drawing.Point(223, 13);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -162,6 +167,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "消息模块";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(189, 117);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(116, 31);
+            this.button17.TabIndex = 6;
+            this.button17.Text = "发送语音";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button2
             // 
@@ -508,6 +523,9 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.button20);
+            this.tabPage5.Controls.Add(this.button19);
+            this.tabPage5.Controls.Add(this.button18);
             this.tabPage5.Controls.Add(this.button13);
             this.tabPage5.Controls.Add(this.button12);
             this.tabPage5.Controls.Add(this.txt_loginToken);
@@ -528,11 +546,11 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(359, 92);
+            this.button13.Location = new System.Drawing.Point(359, 87);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(124, 38);
             this.button13.TabIndex = 9;
-            this.button13.Text = "token登陆";
+            this.button13.Text = "账号密码62登陆";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
@@ -542,7 +560,7 @@
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(124, 39);
             this.button12.TabIndex = 8;
-            this.button12.Text = "获取token数据";
+            this.button12.Text = "获取62数据";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
@@ -788,15 +806,45 @@
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // button17
+            // tabPage7
             // 
-            this.button17.Location = new System.Drawing.Point(189, 117);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(116, 31);
-            this.button17.TabIndex = 6;
-            this.button17.Text = "发送语音";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(765, 396);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "群模块";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(359, 149);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(124, 37);
+            this.button18.TabIndex = 10;
+            this.button18.Text = "获取token";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(359, 210);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(124, 37);
+            this.button19.TabIndex = 11;
+            this.button19.Text = "token登录";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(359, 271);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(124, 35);
+            this.button20.TabIndex = 12;
+            this.button20.Text = "断线重连";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // FormDemo
             // 
@@ -904,5 +952,9 @@
         private System.Windows.Forms.ComboBox cb_addtype;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button20;
     }
 }

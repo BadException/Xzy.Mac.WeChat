@@ -524,17 +524,6 @@ namespace IPADDemo.WeChat
                     WxDelegate.show("登陆失败，重新登录");
                 }
                 Wx_ReleaseEX(ref pushStr);
-
-
-                //WXLoginRequest 可以自动登录
-                XzyWxApis.WXLoginRequest(pointerWxUser, "0XEbAvUZZY++yTRZVxY+BFdCUK/fniCOt9XRhw5YYmpacX781DiS66MHn6dSO8u3gvs9qh8/yVHujrCl3IKTqbcCJxthPP1M3HavpT3K62iBAs86cbqnrh328QzXZNJULW5qIgm2o7G2qBnbY9XIH5/bzsT7SwtlDji58IGIyfBFGyRgoCAByCSfNu5Ozdssuh4de9mQCs12z9XCeXdXZwaNsEYhkb//zpGClyk1X45EODzOPUq3rzlu79J+i3ZF7gmU39PqrgzSQtwkPn/oU1oS7GDYDqwiJwxo/rQVNmrlUbaoFEqSWK74JAMS1lEdgtin5LVmaJj0h9CZgWcNoyfTVC54tXjp8/Dpq1pgLy5Sue4ICuUw3qgsAEJJm/jXphRskYbxeultiL6qDPJFeXT/tpVsw8mXa7fd0tZ1n83wuxi5f1MNYOuoinov/C6jRrFjLk1T7Ko7JdosCbpsKhfeI0p8R9JFeI8iP23YP9Pz3Epk6scGcNV4L3nr1AiaHR5mYiBnPVkTh5EXYaUUTeVV1XlwBsIbcma2nkU+lflZwk3Wnt/8udiHIc1+zArJjioajHPxvisY+rafWvMJp6/o70CgjkM9VXzmRYXhxBWNQHGIL9kxA4S3R7/RqiQIkOTaP/l8EruHVE7B1VIGksdIC1PxccR+iIZbMNtYSLQyvnvdLr0emdD51moNfu3E", (int)pushStr1);
-
-                //WXAutoLogin  用于断线重连。一般非断线下如果 要自动登录，是使用WXLoginRequest方法来做二次登录。若断线再连就使用WXAutoLogin
-                //XzyWxApis.WXAutoLogin(pointerWxUser, "wLdXBzhJttK0TFD3TFpU62ztnYC/bIphOgiv4E8byH+oqKRvl6D5cEDl5kwYHX3Opo77H9M1SuJPbOT3OVW4Ta83vKuzLXos8IQtlcA16GWtM0oXtiCzlJc2zgrh9wbquKY7XQ1TUTPvvnKXbmLWMryL672poL3qqg3wfrdldOR5txTMl9JqsPWC6IaflN2F0VdRJMbVYAinbfCHZ37zCo9jTABo61G19/4MHucBPSJxCaIGqL5v87aH99nT/Lk4lE+bn+S/+9h1RD9UZq+mkcYZ4GypC5Rz8QRbswUJ29+uUDN1cLan6rgOtyM5D8YxzuqjjpNRfS7V1kUo1WNqyJYzTVOEde+i5rIwo/OoRJw7uwS2tthdmzOHGqnglmXoOjpU26j6PMVctC/R036uUopk9jDJ7BA9ALzoaOXn1kOsTPV7d0M1+fRi8wa0kFGx7MrTCHgLprbxyiImxhlO3lHRaedJ+2BqvUjUm2N5+VThxQ4bF8c031Ubk2A0p+UGjbYDdWl6gOxwnRdc6AHXGevL+3qWKIBirALmZ/AfgHcQ0ukXdPtbJX2NK75XUEV5RRVn0GdGPK2HTGmjQaz3/XZKBTxDysCLGJcxn43wPIRzJaD/V5mIEZxcPFYwecNZtoSISqq45flBfe/KST14/FE5mFitS74YCpjy6si5hkM=", (int)pushStr1);
-                //XzyWxApis.WXLoginRequest(pointerWxUser, tokenData.Token, (int)pushStr1);
-                var datas2 = MarshalNativeToManaged((IntPtr)pushStr);
-                var sstr2 = datas2.ToString();
-                Wx_ReleaseEX(ref pushStr);
                 #endregion
 
                 //以下是使用账号密码登录，已经测试成功。账号：13127873237，密码：Taobao123
@@ -1482,6 +1471,24 @@ namespace IPADDemo.WeChat
             return result;
         }
 
+        /// <summary>
+        /// 断线重连
+        /// </summary>
+        /// <returns></returns>
+        public unsafe string Wx_AutoLogin(string token)
+        {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXAutoLogin(pointerWxUser, token,(int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+
         public unsafe string Wx_GetPeopleNearby(float lat,float lng)
         {
             var result = "";
@@ -1509,7 +1516,7 @@ namespace IPADDemo.WeChat
         }
 
         /// <summary>
-        /// 62数据加token登录
+        /// token登录
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
