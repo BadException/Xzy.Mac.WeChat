@@ -97,10 +97,16 @@
             this.txt_Lat = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.button14 = new System.Windows.Forms.Button();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txt_gzhid = new System.Windows.Forms.TextBox();
+            this.button21 = new System.Windows.Forms.Button();
+            this.txt_gzhlog = new System.Windows.Forms.TextBox();
+            this.button22 = new System.Windows.Forms.Button();
+            this.lb_gzh = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -109,6 +115,7 @@
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tabPage8.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -123,8 +130,9 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 248);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 25);
+            this.textBox1.Size = new System.Drawing.Size(192, 126);
             this.textBox1.TabIndex = 1;
             // 
             // label1
@@ -144,7 +152,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Location = new System.Drawing.Point(223, 13);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -798,23 +806,13 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(12, 300);
+            this.button14.Location = new System.Drawing.Point(12, 390);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(106, 44);
             this.button14.TabIndex = 4;
             this.button14.Text = "扫码登录";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(765, 396);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "群模块";
-            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // button18
             // 
@@ -846,6 +844,75 @@
             this.button20.UseVisualStyleBackColor = true;
             this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.lb_gzh);
+            this.tabPage8.Controls.Add(this.button22);
+            this.tabPage8.Controls.Add(this.txt_gzhlog);
+            this.tabPage8.Controls.Add(this.button21);
+            this.tabPage8.Controls.Add(this.txt_gzhid);
+            this.tabPage8.Controls.Add(this.label22);
+            this.tabPage8.Location = new System.Drawing.Point(4, 25);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(765, 396);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "公众号";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(23, 17);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(156, 15);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "公众号id: gh_xxxxxx";
+            // 
+            // txt_gzhid
+            // 
+            this.txt_gzhid.Location = new System.Drawing.Point(197, 14);
+            this.txt_gzhid.Name = "txt_gzhid";
+            this.txt_gzhid.Size = new System.Drawing.Size(198, 25);
+            this.txt_gzhid.TabIndex = 1;
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(422, 15);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(112, 24);
+            this.button21.TabIndex = 2;
+            this.button21.Text = "关注公众号";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // txt_gzhlog
+            // 
+            this.txt_gzhlog.Location = new System.Drawing.Point(6, 257);
+            this.txt_gzhlog.Multiline = true;
+            this.txt_gzhlog.Name = "txt_gzhlog";
+            this.txt_gzhlog.Size = new System.Drawing.Size(753, 133);
+            this.txt_gzhlog.TabIndex = 3;
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(541, 15);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(121, 23);
+            this.button22.TabIndex = 4;
+            this.button22.Text = "获取公众号内容";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
+            // lb_gzh
+            // 
+            this.lb_gzh.FormattingEnabled = true;
+            this.lb_gzh.ItemHeight = 15;
+            this.lb_gzh.Location = new System.Drawing.Point(26, 46);
+            this.lb_gzh.Name = "lb_gzh";
+            this.lb_gzh.Size = new System.Drawing.Size(229, 199);
+            this.lb_gzh.TabIndex = 5;
+            // 
             // FormDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -876,6 +943,8 @@
             this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -952,9 +1021,15 @@
         private System.Windows.Forms.ComboBox cb_addtype;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.TextBox txt_gzhid;
+        private System.Windows.Forms.TextBox txt_gzhlog;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.ListBox lb_gzh;
     }
 }

@@ -1403,12 +1403,16 @@ namespace IPADDemo.WeChat
                         if (c.UserName.IsNull()) {
                             continue;
                         }
-                        if (c.UserName.IndexOf("@chatroom") == -1)
+                        if (c.UserName.IndexOf("@chatroom") == -1 && c.UserName.IndexOf("gh_") == -1)
                         {
                             WxDelegate.getContact(c);
                         }
-                        else {
+                        else if (c.UserName.IndexOf("@chatroom") != -1)
+                        {
                             WxDelegate.getGroup(c);
+                        }
+                        else if (c.UserName.IndexOf("gh_") != -1) {
+                            WxDelegate.getGZH(c);
                         }
                             
                     }
@@ -1508,6 +1512,19 @@ namespace IPADDemo.WeChat
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
             {
                 XzyWxApis.WXAddUser(pointerWxUser, v1, v2, type,context, (int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+        public unsafe string GetSubscriptionInfo(string gzhid)
+        {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXGetSubscriptionInfo(pointerWxUser, gzhid, (int)msgptr1);
                 var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                 result = datas.ToString();
                 Wx_ReleaseEX(ref msgPtr);

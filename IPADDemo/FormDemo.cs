@@ -17,7 +17,7 @@ namespace IPADDemo
     public partial class FormDemo : Form
     {
         public static FormDemo _formDemo;
-        XzyWeChatThread weChatThread;
+        private XzyWeChatThread weChatThread;
 
         public FormDemo()
         {
@@ -26,16 +26,16 @@ namespace IPADDemo
             WxDelegate.show += new Show(this.calback_show);
             WxDelegate.getContact += new GetContact(this.calback_getContact);
             WxDelegate.getGroup += new GetGroup(this.calback_getGroup);
+            WxDelegate.getGZH += new GetGZH(this.calback_getGZH);
             CheckForIllegalCrossThreadCalls = false;
             _formDemo = this;
         }
 
         private void FormDemo_Load(object sender, EventArgs e)
         {
-         
         }
 
-        void calback_qrcode(string qrcode)
+        private void calback_qrcode(string qrcode)
         {
             byte[] arr2 = Convert.FromBase64String(qrcode);
             using (MemoryStream ms2 = new MemoryStream(arr2))
@@ -45,21 +45,27 @@ namespace IPADDemo
             }
         }
 
-        void calback_show(string str)
+        private void calback_show(string str)
         {
             textBox1.Text = str;
         }
 
-        void calback_getContact(Contact contact)
+        private void calback_getContact(Contact contact)
         {
             string str = $"{contact.UserName}-{contact.NickName}-{contact.Country}-{contact.Provincia}-{contact.Remark}";
             lb_friend.Items.Add(str);
         }
 
-        void calback_getGroup(Contact contact)
+        private void calback_getGroup(Contact contact)
         {
             string str = $"{contact.UserName}-{contact.NickName}-{contact.Country}-{contact.Provincia}-{contact.Remark}";
             lb_group.Items.Add(str);
+        }
+
+        private void calback_getGZH(Contact contact)
+        {
+            string str = $"{contact.UserName}-{contact.NickName}-{contact.Country}-{contact.Provincia}-{contact.Remark}";
+            lb_gzh.Items.Add(str);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -82,7 +88,6 @@ namespace IPADDemo
             }
         }
 
-
         private void button17_Click(object sender, EventArgs e)
         {
             string str = weChatThread.Wx_SendVoice(txt_msgWxid.Text, "测试音频1.silk", 1);
@@ -93,8 +98,6 @@ namespace IPADDemo
             weChatThread.Wx_SendMoment(txt_snsText.Text);
         }
 
-
-
         private void button4_Click(object sender, EventArgs e)
         {
             List<string> imgPath = new List<string>();
@@ -102,8 +105,8 @@ namespace IPADDemo
                 imgPath.Add(ImgToBase64String(a.ToString()));
             }
             weChatThread.Wx_SendMoment(txt_snsText.Text, imgPath);
-
         }
+
         private string ImgToBase64String(string Imagefilename)
         {
             try
@@ -123,7 +126,6 @@ namespace IPADDemo
                 return null;
             }
         }
-
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -180,7 +182,6 @@ namespace IPADDemo
             txt_loginToken.Text= wxToken.token;
         }
 
-
         private void button19_Click(object sender, EventArgs e)
         {
             weChatThread.Wx_LoginRequest(txt_loginToken.Text);
@@ -213,6 +214,14 @@ namespace IPADDemo
             string result = weChatThread.Wx_AddUser(txt_v1.Text, txt_v2.Text, type, txt_hellotext.Text);
         }
 
-     
+        private void button21_Click(object sender, EventArgs e)
+        {
+            string result = weChatThread.Wx_AddUser(txt_gzhid.Text, "", 0, "");
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            txt_gzhlog.Text = weChatThread.GetSubscriptionInfo(txt_gzhid.Text);
+        }
     }
 }

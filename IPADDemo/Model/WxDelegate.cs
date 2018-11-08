@@ -19,6 +19,8 @@ namespace IPADDemo.Model
         public static GetContact getContact { get; set; }
 
         public static GetGroup getGroup { get; set; }
+
+        public static GetGZH getGZH { get; set; }
     }
 
     /// <summary>
@@ -40,4 +42,9 @@ namespace IPADDemo.Model
     /// 获取群组
     /// </summary>
     public delegate void GetGroup(Contact group);
+
+    /// <summary>
+    /// 获取公众号
+    /// </summary>
+    public delegate void GetGZH(Contact group);
 }
