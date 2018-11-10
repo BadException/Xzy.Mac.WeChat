@@ -107,6 +107,7 @@
             this.txt_gzhid = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.button14 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -161,6 +162,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button23);
             this.tabPage1.Controls.Add(this.button17);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
@@ -182,7 +184,7 @@
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(116, 31);
             this.button17.TabIndex = 6;
-            this.button17.Text = "发送语音";
+            this.button17.Text = "发送语音silk";
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
@@ -913,6 +915,16 @@
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(331, 117);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(135, 31);
+            this.button23.TabIndex = 7;
+            this.button23.Text = "发送语音MP3";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
             // FormDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -1031,5 +1043,6 @@
         private System.Windows.Forms.TextBox txt_gzhlog;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.ListBox lb_gzh;
+        private System.Windows.Forms.Button button23;
     }
 }

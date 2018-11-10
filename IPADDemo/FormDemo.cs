@@ -1,4 +1,5 @@
 ﻿using IPADDemo.Model;
+using IPADDemo.Util;
 using IPADDemo.WeChat;
 using Newtonsoft.Json;
 using System;
@@ -9,6 +10,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -91,6 +93,27 @@ namespace IPADDemo
         private void button17_Click(object sender, EventArgs e)
         {
             string str = weChatThread.Wx_SendVoice(txt_msgWxid.Text, "测试音频1.silk", 1);
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            Task.Factory.StartNew(() => {
+                string mp3Str = "1.mp3";
+                string silkStr= "1.silk";
+                bool isCovert = ffmpegUtils.GetInstance().ConvertMp3ToAmr(mp3Str, silkStr);
+                if (isCovert)
+                {
+                    while (MyUtils.IsFileInUse(silkStr))
+                    {
+                        Thread.Sleep(100);
+                    }
+                }
+                else
+                {
+                    return;
+                }
+                string str = weChatThread.Wx_SendVoice(txt_msgWxid.Text, silkStr, 1);
+            });          
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -223,5 +246,7 @@ namespace IPADDemo
         {
             txt_gzhlog.Text = weChatThread.GetSubscriptionInfo(txt_gzhid.Text);
         }
+
+
     }
 }

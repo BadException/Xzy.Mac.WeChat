@@ -142,6 +142,7 @@
     <Compile Include="Util\BaseClass.cs" />
     <Compile Include="Util\HttpUtil.cs" />
     <Compile Include="Util\MyUtils.cs" />
+    <Compile Include="Util\ffmpegUtils.cs" />
     <Compile Include="Util\Utilities.cs" />
     <Compile Include="WeChat\XzyWeChatFunc.cs" />
     <Compile Include="WeChat\XzyWeChatThread.cs" />
@@ -175,6 +176,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ffmpeg\ffmpeg.exe" />
+    <Content Include="ffmpeg\silk_v3_decoder.exe" />
+    <Content Include="ffmpeg\silk_v3_encoder.exe" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
