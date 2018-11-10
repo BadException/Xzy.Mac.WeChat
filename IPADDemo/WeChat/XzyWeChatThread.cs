@@ -1533,6 +1533,25 @@ namespace IPADDemo.WeChat
         }
 
         /// <summary>
+        /// 发送链接消息
+        /// </summary>
+        /// <param name="wxid"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public unsafe string Wx_SendAppMsg(string wxid,string context)
+        {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXSendAppMsg(pointerWxUser, wxid,Encoding.Default.GetString( Encoding.UTF8.GetBytes(context)),(int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+        /// <summary>
         /// token登录
         /// </summary>
         /// <param name="token"></param>

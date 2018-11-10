@@ -1,4 +1,5 @@
-﻿using IPADDemo.Model;
+﻿using IPADDemo.AppData;
+using IPADDemo.Model;
 using IPADDemo.Util;
 using IPADDemo.WeChat;
 using Newtonsoft.Json;
@@ -114,6 +115,18 @@ namespace IPADDemo
                 }
                 string str = weChatThread.Wx_SendVoice(txt_msgWxid.Text, silkStr, 1);
             });          
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            string xml = App.AppMsgXml.
+                Replace("$appid$", txt_linkAppId.Text).
+                 Replace("$sdkver$", txt_linkSdkVer.Text).
+                  Replace("$title$", txt_linkTitle.Text).
+                   Replace("$des$", txt_linkDesc.Text).
+                    Replace("$url$", txt_linkUrl.Text).
+                     Replace("$thumburl$", txt_linkImgUrl.Text);
+            weChatThread.Wx_SendAppMsg(txt_msgWxid.Text, xml);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -247,6 +260,6 @@ namespace IPADDemo
             txt_gzhlog.Text = weChatThread.GetSubscriptionInfo(txt_gzhid.Text);
         }
 
-
+       
     }
 }
