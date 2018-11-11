@@ -840,6 +840,7 @@ namespace IPADDemo.WeChat
                         //判断此消息是否已经处理过。若未处理，才会进入里面处理
                         if (Wx_SetMsgKey(MsgId))
                         {
+                            WxDelegate.msgCallBack(msg);
                             if (sub_type == 49)
                             {
                                 if (content.IndexOf("加入群聊") != -1)
@@ -1168,7 +1169,7 @@ namespace IPADDemo.WeChat
             var result = "";
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
             {
-                XzyWxApis.WXSetChatroomName(pointerWxUser, groupid, content, (int)msgptr1);
+                XzyWxApis.WXSetChatroomName(pointerWxUser, groupid, Encoding.Default.GetString(Encoding.UTF8.GetBytes( content)), (int)msgptr1);
                 var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                 result = datas.ToString();
                 Wx_ReleaseEX(ref msgPtr);
@@ -1187,7 +1188,7 @@ namespace IPADDemo.WeChat
             var result = "";
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
             {
-                XzyWxApis.WXSetChatroomAnnouncement(pointerWxUser, groupid, content, (int)msgptr1);
+                XzyWxApis.WXSetChatroomAnnouncement(pointerWxUser, groupid, Encoding.Default.GetString(Encoding.UTF8.GetBytes(content)), (int)msgptr1);
                 var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                 result = datas.ToString();
                 Wx_ReleaseEX(ref msgPtr);

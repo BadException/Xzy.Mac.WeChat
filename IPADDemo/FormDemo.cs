@@ -30,6 +30,7 @@ namespace IPADDemo
             WxDelegate.getContact += new GetContact(this.calback_getContact);
             WxDelegate.getGroup += new GetGroup(this.calback_getGroup);
             WxDelegate.getGZH += new GetGZH(this.calback_getGZH);
+            WxDelegate.msgCallBack += new MsgCallBack(this.calback_msgCallBack);
             CheckForIllegalCrossThreadCalls = false;
             _formDemo = this;
         }
@@ -69,6 +70,10 @@ namespace IPADDemo
         {
             string str = $"{contact.UserName}-{contact.NickName}-{contact.Country}-{contact.Provincia}-{contact.Remark}";
             lb_gzh.Items.Add(str);
+        }
+
+        private void calback_msgCallBack(WxTtsMsg wxTtsMsg) {
+            txt_msgcallback.Text += JsonConvert.SerializeObject(wxTtsMsg) + "\r\n";
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -33,6 +33,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button24 = new System.Windows.Forms.Button();
+            this.txt_linkImgUrl = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txt_linkUrl = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txt_linkDesc = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txt_linkSdkVer = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txt_linkAppId = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txt_linkTitle = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.button23 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -108,19 +121,8 @@
             this.txt_gzhid = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.button14 = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txt_linkTitle = new System.Windows.Forms.TextBox();
-            this.txt_linkAppId = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txt_linkSdkVer = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.txt_linkDesc = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.txt_linkUrl = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txt_linkImgUrl = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.button24 = new System.Windows.Forms.Button();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.txt_msgcallback = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -130,6 +132,7 @@
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -167,6 +170,7 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Location = new System.Drawing.Point(223, 13);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -203,6 +207,118 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "消息模块";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(51, 341);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(107, 35);
+            this.button24.TabIndex = 20;
+            this.button24.Text = "发送链接";
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
+            // 
+            // txt_linkImgUrl
+            // 
+            this.txt_linkImgUrl.Location = new System.Drawing.Point(109, 291);
+            this.txt_linkImgUrl.Name = "txt_linkImgUrl";
+            this.txt_linkImgUrl.Size = new System.Drawing.Size(638, 25);
+            this.txt_linkImgUrl.TabIndex = 19;
+            this.txt_linkImgUrl.Text = "https://avatars2.githubusercontent.com/u/26290929?s=460&v=4";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(27, 294);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(76, 15);
+            this.label28.TabIndex = 18;
+            this.label28.Text = "图片url：";
+            // 
+            // txt_linkUrl
+            // 
+            this.txt_linkUrl.Location = new System.Drawing.Point(109, 251);
+            this.txt_linkUrl.Name = "txt_linkUrl";
+            this.txt_linkUrl.Size = new System.Drawing.Size(638, 25);
+            this.txt_linkUrl.TabIndex = 17;
+            this.txt_linkUrl.Text = "https://github.com/xuzeyu91/Xzy.Mac.WeChat";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(57, 254);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(46, 15);
+            this.label27.TabIndex = 16;
+            this.label27.Text = "url：";
+            // 
+            // txt_linkDesc
+            // 
+            this.txt_linkDesc.Location = new System.Drawing.Point(109, 210);
+            this.txt_linkDesc.Name = "txt_linkDesc";
+            this.txt_linkDesc.Size = new System.Drawing.Size(638, 25);
+            this.txt_linkDesc.TabIndex = 15;
+            this.txt_linkDesc.Text = "test";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(21, 213);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(82, 15);
+            this.label26.TabIndex = 14;
+            this.label26.Text = "链接描述：";
+            // 
+            // txt_linkSdkVer
+            // 
+            this.txt_linkSdkVer.Location = new System.Drawing.Point(589, 175);
+            this.txt_linkSdkVer.Name = "txt_linkSdkVer";
+            this.txt_linkSdkVer.Size = new System.Drawing.Size(158, 25);
+            this.txt_linkSdkVer.TabIndex = 13;
+            this.txt_linkSdkVer.Text = "0";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(513, 181);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(70, 15);
+            this.label25.TabIndex = 12;
+            this.label25.Text = "sdkVer：";
+            // 
+            // txt_linkAppId
+            // 
+            this.txt_linkAppId.Location = new System.Drawing.Point(331, 175);
+            this.txt_linkAppId.Name = "txt_linkAppId";
+            this.txt_linkAppId.Size = new System.Drawing.Size(158, 25);
+            this.txt_linkAppId.TabIndex = 11;
+            this.txt_linkAppId.Text = "wx0f76313b15c62c93";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(279, 178);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(62, 15);
+            this.label24.TabIndex = 10;
+            this.label24.Text = "appid：";
+            // 
+            // txt_linkTitle
+            // 
+            this.txt_linkTitle.Location = new System.Drawing.Point(109, 175);
+            this.txt_linkTitle.Name = "txt_linkTitle";
+            this.txt_linkTitle.Size = new System.Drawing.Size(158, 25);
+            this.txt_linkTitle.TabIndex = 9;
+            this.txt_linkTitle.Text = "协议链接demo";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(21, 178);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(82, 15);
+            this.label23.TabIndex = 8;
+            this.label23.Text = "链接标题：";
             // 
             // button23
             // 
@@ -951,117 +1067,24 @@
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // label23
+            // tabPage7
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(21, 178);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(82, 15);
-            this.label23.TabIndex = 8;
-            this.label23.Text = "链接标题：";
+            this.tabPage7.Controls.Add(this.txt_msgcallback);
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(765, 396);
+            this.tabPage7.TabIndex = 8;
+            this.tabPage7.Text = "收消息回调";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // txt_linkTitle
+            // txt_msgcallback
             // 
-            this.txt_linkTitle.Location = new System.Drawing.Point(109, 175);
-            this.txt_linkTitle.Name = "txt_linkTitle";
-            this.txt_linkTitle.Size = new System.Drawing.Size(158, 25);
-            this.txt_linkTitle.TabIndex = 9;
-            this.txt_linkTitle.Text = "协议链接demo";
-            // 
-            // txt_linkAppId
-            // 
-            this.txt_linkAppId.Location = new System.Drawing.Point(331, 175);
-            this.txt_linkAppId.Name = "txt_linkAppId";
-            this.txt_linkAppId.Size = new System.Drawing.Size(158, 25);
-            this.txt_linkAppId.TabIndex = 11;
-            this.txt_linkAppId.Text = "wx0f76313b15c62c93";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(279, 178);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(62, 15);
-            this.label24.TabIndex = 10;
-            this.label24.Text = "appid：";
-            // 
-            // txt_linkSdkVer
-            // 
-            this.txt_linkSdkVer.Location = new System.Drawing.Point(589, 175);
-            this.txt_linkSdkVer.Name = "txt_linkSdkVer";
-            this.txt_linkSdkVer.Size = new System.Drawing.Size(158, 25);
-            this.txt_linkSdkVer.TabIndex = 13;
-            this.txt_linkSdkVer.Text = "0";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(513, 181);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(70, 15);
-            this.label25.TabIndex = 12;
-            this.label25.Text = "sdkVer：";
-            // 
-            // txt_linkDesc
-            // 
-            this.txt_linkDesc.Location = new System.Drawing.Point(109, 210);
-            this.txt_linkDesc.Name = "txt_linkDesc";
-            this.txt_linkDesc.Size = new System.Drawing.Size(638, 25);
-            this.txt_linkDesc.TabIndex = 15;
-            this.txt_linkDesc.Text = "test";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(21, 213);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(82, 15);
-            this.label26.TabIndex = 14;
-            this.label26.Text = "链接描述：";
-            // 
-            // txt_linkUrl
-            // 
-            this.txt_linkUrl.Location = new System.Drawing.Point(109, 251);
-            this.txt_linkUrl.Name = "txt_linkUrl";
-            this.txt_linkUrl.Size = new System.Drawing.Size(638, 25);
-            this.txt_linkUrl.TabIndex = 17;
-            this.txt_linkUrl.Text = "https://github.com/xuzeyu91/Xzy.Mac.WeChat";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(57, 254);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(46, 15);
-            this.label27.TabIndex = 16;
-            this.label27.Text = "url：";
-            // 
-            // txt_linkImgUrl
-            // 
-            this.txt_linkImgUrl.Location = new System.Drawing.Point(109, 291);
-            this.txt_linkImgUrl.Name = "txt_linkImgUrl";
-            this.txt_linkImgUrl.Size = new System.Drawing.Size(638, 25);
-            this.txt_linkImgUrl.TabIndex = 19;
-            this.txt_linkImgUrl.Text = "https://avatars2.githubusercontent.com/u/26290929?s=460&v=4";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(27, 294);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(76, 15);
-            this.label28.TabIndex = 18;
-            this.label28.Text = "图片url：";
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(51, 341);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(107, 35);
-            this.button24.TabIndex = 20;
-            this.button24.Text = "发送链接";
-            this.button24.UseVisualStyleBackColor = true;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
+            this.txt_msgcallback.Location = new System.Drawing.Point(6, 6);
+            this.txt_msgcallback.Multiline = true;
+            this.txt_msgcallback.Name = "txt_msgcallback";
+            this.txt_msgcallback.Size = new System.Drawing.Size(753, 384);
+            this.txt_msgcallback.TabIndex = 0;
             // 
             // FormDemo
             // 
@@ -1095,6 +1118,8 @@
             this.tabPage6.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1195,5 +1220,7 @@
         private System.Windows.Forms.TextBox txt_linkTitle;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TextBox txt_msgcallback;
     }
 }
