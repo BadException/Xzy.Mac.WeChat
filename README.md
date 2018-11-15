@@ -6,3 +6,6 @@
 <a href="https://github.com/xuzeyu91/Xzy.Mac.WeChat/blob/master/API.txt" title="支持功能API文档">支持功能API文档</a><br/>
 
 ![](https://github.com/xuzeyu91/Xzy.Mac.WeChat/blob/master/demo.gif) <br/>
+
+项目转移至 :https://github.com/changtuiqie/Mac.WeChat
+后续更新请在那边进行查看
